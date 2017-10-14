@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <form onkeyup="update()">
+            A1: <input type="number" id="a1">/50<br>
+            A2: <input type="number" id="a2">/50<br>
+            A3: <input type="number" id="a3">/50<br>
+            A4: <input type="number" id="a4">/50<br>
+            Midsem: <input type="number" id="midsem">/15<br>
+            Final: <input type="number" id="final">/50<br>
+        </form>
+        <br>
+        Assignments: <div id="assignments"></div><br>
+        Exams: <div id="exams"></div><br>
+        Final: <div id="mark"></div>
+    </body>
+    <footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        </script>
+        <script src="2310marks/2310.js">
+        </script>
+        <script>
+$(document).ready(function() { init(); });
+        </script>
+    </footer>
+</html>
