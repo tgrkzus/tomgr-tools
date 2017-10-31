@@ -1,28 +1,96 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel=stylesheet type="text/css" href="2310marks/2310.css">
     </head>
     <body>
+        <h1>2310 Grade Calculator</h1>
         <form onkeyup="update()">
-            A1: <input type="number" id="a1">/50<br>
-            A2: <input type="number" id="a2">/50<br>
-            A3: <input type="number" id="a3">/50<br>
-            A4: <input type="number" id="a4">/50<br>
-            Midsem: <input type="number" id="midsem">/15<br>
-            Final: <input type="number" id="final">/50<br>
-        </form>
-        <br>
-        Assignments: <div id="assignments"></div><br>
-        Exams: <div id="exams"></div><br>
-        Final: <div id="mark"></div>
-    </body>
-    <footer>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-        </script>
-        <script src="2310marks/2310.js">
-        </script>
-        <script>
-$(document).ready(function() { init(); });
-        </script>
-    </footer>
-</html>
+            <table>
+                <td>
+                    <tr>
+                        A1
+                    </tr>
+                    <input type="number" id="a1">
+                    <tr>
+                    </tr>
+                    <tr>
+                        /50
+                    </tr>
+                </td>
+                <br>
+                <td>
+                    <tr>
+                        A2
+                    </tr>
+                    <input type="number" id="a2">
+                    <tr>
+                    </tr>
+                    <tr>
+                        /50
+                    </tr>
+                </td>
+                <br>
+                <td>
+                    <tr>
+                        A3
+                    </tr>
+                    <input type="number" id="a3">
+                    <tr>
+                    </tr>
+                    <tr>
+                        /50
+                    </tr>
+                </td>
+                <br>
+                <td>
+                    <tr>
+                        A4
+                    </tr>
+                    <input type="number" id="a4">
+                    <tr>
+                    </tr>
+                    <tr>
+                        /50
+                    </tr>
+                </td>
+                <br>
+                <td>
+                    <tr>
+                        Midsem
+                    </tr>
+                    <input type="number" id="midsem">
+                    <tr>
+                    </tr>
+                    <tr>
+                        /15
+                    </tr>
+                </td>
+                <br>
+                <td>
+                    <tr>
+                        Final
+                    </tr>
+                    <input type="number" id="final">
+                    <tr>
+                    </tr>
+                    <tr>
+                        /50
+                    </tr>
+                </td>
+            </form>
+            <br>
+            Assignments: <div id="assignments"></div><br>
+            Exams: <div id="exams"></div><br>
+            Final: <div id="mark"></div>
+        </body>
+        <footer>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+            </script>
+            <script src="2310marks/2310.js">
+            </script>
+            <script>
+                $(document).ready(function() { init(); });
+            </script>
+        </footer>
+    </html>

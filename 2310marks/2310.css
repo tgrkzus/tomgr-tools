@@ -1,0 +1,18 @@
+body {
+    /* sorry we can't do SS in hex */
+    background-color: #CE2310;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+}
+
