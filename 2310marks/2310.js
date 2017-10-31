@@ -14,16 +14,10 @@ function update() {
     examMarkOne = 0.3 * midsem + 0.7 * finalexam;
     examMarkTwo = 0.15 * midsem + 0.85 * finalexam;
 
-    var examMark;
-    if (examMarkOne > examMarkTwo) {
-        examMark = examMarkOne;
-    }
-    else {
-        examMark = examMarkTwo;
-    }
+    const examMark = Math.max(examMarkOne, examMarkTwo);
 
     mark = Math.sqrt(assignmentMark * examMark);
-    document.getElementById("assignments").innerHTML = (assignmentMark * 100 + "%");
-    document.getElementById("exams").innerHTML = (examMark * 100 + "%");
-    document.getElementById("mark").innerHTML = (mark * 100 + "%");
+    document.getElementById("assignments").innerHTML = (Math.floor(assignmentMark * 100) + "%");
+    document.getElementById("exams").innerHTML = (Math.floor(examMark * 100) + "%");
+    document.getElementById("mark").innerHTML = (Math.floor(mark * 100) + "%");
 }
