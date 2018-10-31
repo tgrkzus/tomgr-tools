@@ -6,91 +6,44 @@
     <body>
         <h1>2310 Grade Calculator</h1>
         <form onkeyup="update()">
-            <table>
-                <td>
-                    <tr>
-                        A1
-                    </tr>
-                    <input type="number" id="a1">
-                    <tr>
-                    </tr>
-                    <tr>
-                        /50
-                    </tr>
-                </td>
-                <br>
-                <td>
-                    <tr>
-                        A2
-                    </tr>
-                    <input type="number" id="a2">
-                    <tr>
-                    </tr>
-                    <tr>
-                        /50
-                    </tr>
-                </td>
-                <br>
-                <td>
-                    <tr>
-                        A3
-                    </tr>
-                    <input type="number" id="a3">
-                    <tr>
-                    </tr>
-                    <tr>
-                        /50
-                    </tr>
-                </td>
-                <br>
-                <td>
-                    <tr>
-                        A4
-                    </tr>
-                    <input type="number" id="a4">
-                    <tr>
-                    </tr>
-                    <tr>
-                        /50
-                    </tr>
-                </td>
-                <br>
-                <td>
-                    <tr>
-                        Midsem
-                    </tr>
-                    <input type="number" id="midsem">
-                    <tr>
-                    </tr>
-                    <tr>
-                        /15
-                    </tr>
-                </td>
-                <br>
-                <td>
-                    <tr>
-                        Final
-                    </tr>
-                    <input type="number" id="final">
-                    <tr>
-                    </tr>
-                    <tr>
-                        /50
-                    </tr>
-                </td>
-            </form>
-            <br>
+            <div class="row">
+                <div class="column">A1</div>
+                <input class="column" type="number" id="a1">
+                <div class="column">/50</div>
+            </div>
+            <div class="row">
+                <div class="column">A2</div>
+                <input class="column" type="number" id="a2">
+                <div class="column">/50</div>
+            </div>
+            <div class="row">
+                <div class="column">A3</div>
+                <input class="column" type="number" id="a3">
+                <div class="column">/50</div>
+            </div>
+            <div class="row">
+                <div class="column">A4</div>
+                <input class="column" type="number" id="a4">
+                <div class="column">/50</div>
+            </div>
+            <div class="row">
+                <div class="column">Midsem</div>
+                <input class="column" type="number" id="midsem">
+                <div class="column">/15</div>
+            </div>
+            <div class="row">
+                <div class="column">Final Exam</div>
+                <input class="column" type="number" id="final">
+                <div class="column">/50</div>
+            </div>
+        </form>
+        <br>
             Assignments: <div id="assignments"></div><br>
             Exams: <div id="exams"></div><br>
             Final: <div id="mark"></div>
         </body>
         <footer>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-            </script>
             <script src="2310marks/2310.js">
-            </script>
-            <script>
-                $(document).ready(function() { init(); });
             </script>
         </footer>
     </html>

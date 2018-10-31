@@ -1,23 +1,55 @@
-function init() {
+const readFraction = (string, max) => {
+    const value = parseFloat(string);
+    if (isNaN(value)) {
+        throw new Error("Invalid float");
+    }
+    if (value < 0 || value > max) {
+        throw new Error("Float outside accepted range");
+    }
+    return value / max;
+}
+const getField = (id, max) => {
+    const element = document.getElementById(id);
+    try {
+        const value = readFraction(element.value, max);
+        element.classList.remove("invalid");
+        return value;
+    } catch (e) {
+        element.classList.add("invalid");
+        throw new Error(`${id}: ${e.message}`);
+    }
 }
 
-function update() {
-    a1 = (document.getElementById("a1").value || 0) / 50;
-    a2 = (document.getElementById("a2").value || 0) / 50;
-    a3 = (document.getElementById("a3").value || 0) / 50;
-    a4 = (document.getElementById("a4").value || 0) / 50;
-    midsem = (document.getElementById("midsem").value || 0) / 15;
-    finalexam = (document.getElementById("final").value || 0) / 50;
+const update = () => {
+    const assignments = document.getElementById("assignments");
+    const exams = document.getElementById("exams");
+    const mark = document.getElementById("mark");
 
-    assignmentMark = (a1 + a2 + a3 + a4) * 0.25;
-    
-    examMarkOne = 0.3 * midsem + 0.7 * finalexam;
-    examMarkTwo = 0.15 * midsem + 0.85 * finalexam;
+    try {
+        const a1 = getField("a1", 50);
+        const a2 = getField("a2", 50);
+        const a3 = getField("a3", 50);
+        const a4 = getField("a4", 50);
+        const midsem = getField("midsem", 15);
+        const finalexam = getField("final", 50);
 
-    const examMark = Math.max(examMarkOne, examMarkTwo);
+        const assignmentMark = (a1 + a2 + a3 + a4) * 0.25;
 
-    mark = Math.sqrt(assignmentMark * examMark);
-    document.getElementById("assignments").innerHTML = (Math.floor(assignmentMark * 100) + "%");
-    document.getElementById("exams").innerHTML = (Math.floor(examMark * 100) + "%");
-    document.getElementById("mark").innerHTML = (Math.floor(mark * 100) + "%");
+        const examMarkOne = 0.3 * midsem + 0.7 * finalexam;
+        const examMarkTwo = 0.15 * midsem + 0.85 * finalexam;
+
+        const examMark = Math.max(examMarkOne, examMarkTwo);
+
+        const courseMark = Math.sqrt(assignmentMark * examMark);
+
+        assignments.innerHTML = (Math.floor(assignmentMark * 100) + "%");
+        exams.innerHTML = (Math.floor(examMark * 100) + "%");
+        mark.innerHTML = (Math.floor(courseMark * 100) + "%");
+    } catch (e) {
+        assignments.innerHTML = "";
+        exams.innerHTML = "";
+        mark.innerHTML = e.message;
+    }
 }
+
+window.onload = update;
