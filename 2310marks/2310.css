@@ -1,18 +1,37 @@
 body {
-    /* sorry we can't do SS in hex */
-    background-color: #CE2310;
+    background-color: #C55E2310;
     max-width: 280px;
     margin-left: auto;
     margin-right: auto;
 }
 
-h1 {
-    text-align: center;
+form {
+    display: flex;
+    flex-flow: column;
+}
+
+.row {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.column:nth-child(1) {
+    flex: 1;
+}
+
+.column:nth-child(2) {
+    flex: 2;
 }
 
 input {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1em;
+    text-align: right;
 }
 
+input.invalid {
+    box-shadow: 0 0 3px red;
+}
+
+h1 {
+    text-align: center;
+}
