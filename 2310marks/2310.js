@@ -1,5 +1,5 @@
 const readFraction = (string, max) => {
-    const value = parseFloat(string);
+    const value = string.trim() === "" ? 0 : parseFloat(string);
     if (isNaN(value)) {
         throw new Error("Invalid float");
     }
