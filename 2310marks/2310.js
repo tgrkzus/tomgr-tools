@@ -20,10 +20,19 @@ const getField = (id, max) => {
     }
 }
 
+const calculateCutoff = (assignmentMark, midsem, cutoff) => {
+    const examNeed = Math.pow(cutoff,2) / assignmentMark;
+    const finalOne = (examNeed - 0.15 * midsem) / 0.85;
+    const finalTwo = (examNeed - 0.30 * midsem) / 0.7;
+    
+    return Math.min(finalOne, finalTwo);
+}
+
 const update = () => {
     const assignments = document.getElementById("assignments");
     const exams = document.getElementById("exams");
     const mark = document.getElementById("mark");
+    const cutoffs = [0.20,0.45,0.50,0.65,0.75,0.85];
 
     try {
         const a1 = getField("a1", 50);
@@ -45,6 +54,14 @@ const update = () => {
         assignments.innerHTML = (Math.floor(assignmentMark * 100) + "%");
         exams.innerHTML = (Math.floor(examMark * 100) + "%");
         mark.innerHTML = (Math.floor(courseMark * 100) + "%");
+        
+        for(let i = 2; i <= 7; i++) {
+            const cutoff = document.getElementById("need" + i);
+            const need = calculateCutoff(assignmentMark, midsem, cutoffs[i-2]);
+            
+            cutoff.innerHTML = (Math.ceil(need * 100) + "% (" +
+                Math.ceil(need * 50) + "/50)");
+        }
     } catch (e) {
         assignments.innerHTML = "";
         exams.innerHTML = "";
